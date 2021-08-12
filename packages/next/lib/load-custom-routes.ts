@@ -26,6 +26,7 @@ export type Rewrite = {
   basePath?: false
   locale?: false
   has?: RouteHas[]
+  headers?: { [header: string]: string }
 }
 
 export type Header = {
@@ -198,6 +199,7 @@ function checkCustomRoutes(
 
   if (type === 'rewrite') {
     allowedKeys.add('destination')
+    allowedKeys.add('headers')
   }
   if (type === 'redirect') {
     allowedKeys.add('statusCode')

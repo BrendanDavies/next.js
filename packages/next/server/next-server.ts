@@ -877,6 +877,7 @@ export default class Server {
             const proxy = new Proxy({
               target,
               changeOrigin: true,
+              headers: rewrite.headers,
               ignorePath: true,
               xfwd: true,
               proxyTimeout: 30_000, // limit proxying to 30 seconds
